@@ -68,20 +68,33 @@ def _(item_id):
     return matches[0]
 
 ############################## PUT ITEM ##############################
-@put("/items/<item_id>")
-def _(item_id):
+@put('/items/<id>') #(Patch)
+def _(id):
     try:
-        item = [item for item in items if item["id"] == item_id][0]
-        if not request.json.get("name"):
-            pass
-        else:
-            item["name"] = request.json.get("name")
+        # item is changed since it is using refference (pointer to list object)
+        item = [item for item in items if item['id'] == id][0]
         
-        if not request.json.get("last_name"):
+        # Små Kus løsning
+        '''if not request.json.get('name'):
             pass
         else:
-            item["last_name"] = request.json.get("last_name")       
+            item['name'] = request.json.get('name')
+        if not request.json.get('last_name'): 
+            pass
+        else:
+            item['last_name'] = request.json.get('last_name')'''
+
+        #Santiagos løsning
+        '''if request.json.get('name'): item['name'] = request.json.get('name')
+        if request.json.get('last_name'): item['last_name'] = request.json.get('last_name')'''
+
+        #Catalinas løsning, extended
+        for key in item.keys():
+            if key in request.json.keys():
+                item[key] = request.json.get(key)
+
         return item
+
     except Exception as ex:
         print(ex)
         response.status = 204
