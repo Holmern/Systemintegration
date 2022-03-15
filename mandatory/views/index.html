@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button name="send_JWT", value=""></button>
+    <form action="/jwt" method="POST">
+        <input type="text" name="queryString"><br>
+        <input type="submit" name="searchButton" value="Search">
+    </form>
+</body>
+</html>
+
+<script>
+    /*JWT
+    {
+        "cpr":"1",
+        "iat":1000,
+        "exp": 1600
+
+    }
+    */
+	window.addEventListener('message', function(e) {
+        if(e.data=="no")
+            return
+		console.log(e.data);
+	}, true)
+</script>

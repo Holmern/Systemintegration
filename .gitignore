@@ -4,3 +4,4 @@ lib/
 pyvenv.cfg
 get_phone.py
 get_api_key.py
+get_email.py

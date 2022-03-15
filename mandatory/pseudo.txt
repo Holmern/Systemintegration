@@ -1,0 +1,12 @@
+
+
+#jwt = "12345.1234.123"
+
+#Page = Button.send.jwt
+
+#Server = listen.page.button.jwt
+#Server = Validate.secret
+
+#Token = Secret.OK
+#Token = Token.randomnumber.sendtoDB.SendtoMobile
+#DB = save.4digit
