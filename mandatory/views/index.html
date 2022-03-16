@@ -7,27 +7,11 @@
     <title>Mandatory</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <button name="send_JWT", value=""></button>
-    <form action="/jwt" method="POST">
-        <input type="text" name="queryString"><br>
-        <input type="submit" name="searchButton" value="Search">
+    <h1>Mandatory 1</h1>
+    <form action="/jwt" method="post">
+        <input type="hidden" id="jwt_field" name="print_JWT" value={{ data }}>
+        <input type="text" id="phone_field" name="phone" placeholder="Enter Phonenumber">
+        <input id="jwt_test" type="submit" name="send_JWT" value="Validate">
     </form>
 </body>
 </html>
-
-<script>
-    /*JWT
-    {
-        "cpr":"1",
-        "iat":1000,
-        "exp": 1600
-
-    }
-    */
-	window.addEventListener('message', function(e) {
-        if(e.data=="no")
-            return
-		console.log(e.data);
-	}, true)
-</script>
